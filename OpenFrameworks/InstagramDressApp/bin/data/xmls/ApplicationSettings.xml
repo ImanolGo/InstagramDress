@@ -6,7 +6,7 @@
       <window title="Jimmy Choo Shop Window App" x="0" y="0" width="960" height="600" fullscreen="0" showCursor="1"/>
 
       <debug showCursor="1" setVerbose="1" logToFile = "0"/>
-      <network ip="127.0.0.1"  portUdpSend="7890" portUdpReceive="5678"/>
+      <network ipAddress="192.168.20.237"  portUdpSend="2390" portUdpReceive="5678"/>
       <app request_time_ms="1000"  playback_time_ms="10000"/>
 
   </of_settings>

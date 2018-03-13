@@ -189,8 +189,8 @@ bool InstagramManager::checkColorTags(const string& result)
         string hastag = '#' + m_colorTags[i];
         if(ofIsStringInString(result, hastag))
         {
-            ofLogNotice() << "InstagramManager::checkColorTags -> color hashtag found:  " << hastag;
             m_currentColorIndex = i;
+            ofLogNotice() << "InstagramManager::checkColorTags -> color hashtag found:  " << hastag<< ", index: " << m_currentColorIndex;
             return true;
         }
         
@@ -205,8 +205,8 @@ bool InstagramManager::checkEffectTags(const string& result)
         string hastag = '#' + m_effectTags[i];
         if(ofIsStringInString(result, hastag))
         {
-            ofLogNotice() << "InstagramManager::checkEffectTags -> effect hashtag found:  " << hastag;
             m_currentEffectIndex = i;
+            ofLogNotice() << "InstagramManager::checkEffectTags -> effect hashtag found:  " << hastag<< ", index: " << m_currentEffectIndex;
             return true;
         }
         
