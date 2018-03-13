@@ -1,0 +1,144 @@
+
+
+--------------------------------------- 2017-09-13-22-57-23-376
+[notice ] SettingsManager::setDebugProperties->  successfully loaded the OF general settings
+[notice ] SettingsManager::setNetworkProperties->  successfully loaded the network settings
+[notice ] SettingsManager::loadSerialSettings->  serial will be automatically selected
+[notice ] SettingsManager::loadSerialSettings->  successfully loaded the serial settings
+[notice ] SettingsManager::loadAppSettings->  request time = 1000ms, playback time = 30000ms
+[notice ] SettingsManager::loadAppSettings->  successfully loaded the app settings
+[notice ] SettingsManager::loadTextureSettings->  texture = Equalizer, path = images/general/equalizer.png
+[notice ] SettingsManager::loadTextureSettings->  texture = Brush, path = images/general/brush.png
+[notice ] SettingsManager::loadTextureSettings->  successfully loaded the resource settings
+[notice ] SettingsManager::loadSvgSettings->  path not found: //svgs
+[notice ] SettingsManager::loadVideoSettings->  video = NightFever, path = videos/Bee_Gees_-_Night_Fever_1977_.mp4
+[notice ] SettingsManager::loadSvgSettings->  successfully loaded the video settings
+[notice ] SettingsManager::loadAudioSettings->  sample = DiscoSong, path = sound/GarnaVutka_Funny_Funk_Disco_Groove__Full_version_.mp3
+[notice ] SettingsManager::loadAudioSettings->  sample = NightFeverShort, path = sound/NightFever_BeeGees_short.mp3
+[notice ] SettingsManager::loadAudioSettings->  sample = TestSound, path = sound/TestSound.mp3
+[notice ] SettingsManager::loadAudioSettings->  successfully loaded the audio settings
+[notice ] SettingsManager::loadColors->  color = BackgroundColor, r = 40, g = 40, b = 43, a = 255
+[notice ] SettingsManager::loadColors->  color = CenterBackgroundColor, r = 85, g = 78, b = 68, a = 255
+[notice ] SettingsManager::loadColors->  color = EdgeBackgroundColor, r = 30, g = 30, b = 30, a = 255
+[notice ] SettingsManager::loadColors->  color = GUI_Background, r = 0, g = 0, b = 0, a = 127
+[notice ] SettingsManager::loadColors->  color = GUI_Fill, r = 160, g = 160, b = 160, a = 160
+[notice ] SettingsManager::loadColors->  color = GUI1, r = 160, g = 160, b = 80, a = 200
+[notice ] SettingsManager::loadColors->  color = GUI2, r = 80, g = 160, b = 160, a = 200
+[notice ] SettingsManager::loadColors->  color = LiveRectangle, r = 56, g = 234, b = 57, a = 108
+[notice ] SettingsManager::loadColors->  color = FrameRectangle, r = 90, g = 95, b = 103, a = 255
+[notice ] SettingsManager::loadColors->  successfully loaded the applications colors
+[notice ] SettingsManager::loadTagSettings->  tag = iwantchoosloane
+[notice ] SettingsManager::loadTagSettings->  tag = jimmychoo
+[notice ] SettingsManager::loadTagSettings->  successfully loaded the tag settings
+[notice ] ResourceManager::initialized
+[notice ] ResourceManager::loadTextures-> allocated texture Brush
+[notice ] ResourceManager::loadTextures-> allocated texture Equalizer
+[notice ] ResourceManager::containsTexture-> no resource with name GradientBackground
+[notice ] ViewManager::initialized 
+[notice ] VisualEffectsManager::initialized
+[verbose] ofFbo: GL frame buffer object supported
+[verbose] ofFbo: checkGLSupport(): maxColorAttachments: 8, maxDrawBuffers: 8, maxSamples: 8
+[verbose] ofFbo: FRAMEBUFFER_COMPLETE - OK
+[notice ] EngineFont::setup-> font loaded fonts/OpenSansEmoji.ttf with size 20
+[notice ] LayoutManager::initialized
+[notice ] KeyboardManager::initialized
+[notice ] InstagramManager::initialized
+[notice ] AudioManager::playSample -> LOOPING SOUND!!:  
+[notice ] AudioManager::initialized
+[verbose] ofFbo: GL frame buffer object supported
+[verbose] ofFbo: checkGLSupport(): maxColorAttachments: 8, maxDrawBuffers: 8, maxSamples: 8
+[verbose] ofFbo: FRAMEBUFFER_COMPLETE - OK
+[verbose] ofFbo: GL frame buffer object supported
+[verbose] ofFbo: checkGLSupport(): maxColorAttachments: 8, maxDrawBuffers: 8, maxSamples: 8
+[verbose] ofFbo: FRAMEBUFFER_COMPLETE - OK
+[notice ] BlankScene::setup: 
+[notice ] BlankScene::willFadeIn: 
+[verbose] ofFbo: GL frame buffer object supported
+[verbose] ofFbo: checkGLSupport(): maxColorAttachments: 8, maxDrawBuffers: 8, maxSamples: 8
+[verbose] ofFbo: FRAMEBUFFER_COMPLETE - OK
+[notice ] SceneManager::initialized
+[notice ] SerialManager::setupSerial << Autoconnecting serial port
+[notice ] ofSerial: [0] = cu.Bluetooth-Incoming-Port
+[notice ] ofSerial: [1] = tty.Bluetooth-Incoming-Port
+[notice ] ofSerial: [2] = cu.MINIJAMBOXbyJawbone-SPP
+[notice ] ofSerial: [3] = tty.MINIJAMBOXbyJawbone-SPP
+[notice ] ofSerial: opening /dev/cu.Bluetooth-Incoming-Port @ 115200 bps
+[notice ] ofSerial: opened /dev/cu.Bluetooth-Incoming-Port sucessfully @ 115200 bps
+[notice ] SerialManager::sendPin << Sent '?'
+[verbose] ofSerial: wrote byte
+[notice ] SerialManager::checkConnection << Serial Available: 0
+[notice ] SerialManager::checkConnection << Arduino is not connected 
+[notice ] ofSerial: opening /dev/tty.Bluetooth-Incoming-Port @ 115200 bps
+[notice ] ofSerial: opened /dev/tty.Bluetooth-Incoming-Port sucessfully @ 115200 bps
+[notice ] SerialManager::sendPin << Sent '?'
+[verbose] ofSerial: wrote byte
+[notice ] SerialManager::checkConnection << Serial Available: 0
+[notice ] SerialManager::checkConnection << Arduino is not connected 
+[notice ] ofSerial: opening /dev/cu.MINIJAMBOXbyJawbone-SPP @ 115200 bps
+[ error ] ofSerial: unable to open /dev/cu.MINIJAMBOXbyJawbone-SPP
+[notice ] SerialManager::checkConnection << Arduino is not connected 
+[notice ] ofSerial: opening /dev/tty.MINIJAMBOXbyJawbone-SPP @ 115200 bps
+[ error ] ofSerial: unable to open /dev/tty.MINIJAMBOXbyJawbone-SPP
+[notice ] SerialManager::checkConnection << Arduino is not connected 
+[notice ] SerialManager::initialized
+[notice ] DmxManager::setupSerial << Autoconnecting dmx port
+[notice ] ofSerial: [0] = cu.Bluetooth-Incoming-Port
+[notice ] ofSerial: [1] = tty.Bluetooth-Incoming-Port
+[notice ] ofSerial: [2] = cu.MINIJAMBOXbyJawbone-SPP
+[notice ] ofSerial: [3] = tty.MINIJAMBOXbyJawbone-SPP
+[notice ] ofSerial: opening /dev/cu.Bluetooth-Incoming-Port @ 38400 bps
+[notice ] ofSerial: opened /dev/cu.Bluetooth-Incoming-Port sucessfully @ 38400 bps
+[verbose] ofSerial: wrote 2 bytes
+[ error ]  Dmx4All is not connected 
+[notice ] ofSerial: opening /dev/tty.Bluetooth-Incoming-Port @ 38400 bps
+[notice ] ofSerial: opened /dev/tty.Bluetooth-Incoming-Port sucessfully @ 38400 bps
+[verbose] ofSerial: wrote 2 bytes
+[ error ]  Dmx4All is not connected 
+[notice ] ofSerial: opening /dev/cu.MINIJAMBOXbyJawbone-SPP @ 38400 bps
+[ error ] ofSerial: unable to open /dev/cu.MINIJAMBOXbyJawbone-SPP
+[ error ]  Dmx4All is not connected 
+[notice ] ofSerial: opening /dev/tty.MINIJAMBOXbyJawbone-SPP @ 38400 bps
+[ error ] ofSerial: unable to open /dev/tty.MINIJAMBOXbyJawbone-SPP
+[ error ]  Dmx4All is not connected 
+[notice ] DmxManager::initialized
+[warning] ofXml: setCurrentElement(): passed invalid path "DMX"
+[warning] ofXml: setToParent(): current element has no parent
+[notice ] GuiManager::initialized
+[notice ] BlankScene::willDraw: 
+[notice ] DmxManager::speed << 128
+[notice ] InstagramManager::parseJson -> iwantchoosloane: BYqSK-GB75c
+[notice ] InstagramManager::checkAllTags -> hashtag found!!!: #iwantchoosloane
+[notice ] InstagramManager::checkAllTags -> hashtag found!!!: #jimmychoo
+[notice ] BlankScene::willFadeOut: 
+[notice ] DiscoScene::setup: 
+[notice ] EngineFont::setup-> font loaded fonts/OpenSansEmoji.ttf with size 20
+[notice ] DiscoScene::willFadeIn: 
+[notice ] DmxManager::speed << 1
+[notice ] InstagramManager::resetDiscoScenes
+[notice ] BlankScene::willExit: 
+[notice ] DiscoScene::willDraw: 
+[notice ] DmxManager::speed << 1
+[notice ] DiscoScene::willFadeOut: 
+[notice ] ShowcaseScene::willFadeIn: 
+[notice ] DmxManager::speed << 108
+[notice ] ShowcaseScene::willDraw: 
+[notice ] DiscoScene::willExit: 
+[notice ] JimmyChooShopWindowApp::exit
+[warning] ofXml: setToParent(): current element has no parent
+[ error ] ofXml: toString(): XML Exception
+[notice ] AppManager::Destructor
+[notice ] InstagramManager::destructor
+[notice ] SerialManager::destructor
+[notice ] DmxManager::destructor
+[notice ] DmxManager::speed << 128
+[notice ] AudioManager::Destructor
+[notice ] SceneManager::Destructor
+[warning] ofXml: setToParent(): current element has no parent
+[ error ] ofXml: toString(): XML Exception
+[notice ] GuiManager::Destructor
+[notice ] KeyboardManager::destructor
+[notice ] LayoutManager::Destructor
+[notice ] VisualEffectsManager::destructor
+[notice ] ViewManager::destructor
+[notice ] ResourceManager::destructor
+[notice ] SettingsManager::Destructor
