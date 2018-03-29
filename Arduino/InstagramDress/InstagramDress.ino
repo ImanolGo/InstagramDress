@@ -24,22 +24,26 @@
  
 
 #include "WifiManager.h"
+#include "LedsManager.h"
 
 
-WifiManager wifiManager;
+LedsManager ledsManager;
+WifiManager wifiManager(&ledsManager);
+
 
 void setup() 
 {
-  
     Serial.begin(115200);
     delay(1000);
     Serial.println("Starting Software!!!!");
-    
+
+    ledsManager.setup();
     wifiManager.setup();
 }
 
 void loop() 
 {
+    ledsManager.update();
     wifiManager.update();
     
   // put a delay so it isn't overwhelming

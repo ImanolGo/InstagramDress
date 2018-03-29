@@ -43,10 +43,11 @@ void InstagramManager::setup()
 void InstagramManager::setupTags()
 {
     //m_triggerTags.push_back("dorobaer");
+    //m_triggerTags.push_back("elktrocouture");
     m_triggerTags.push_back("colors");
-    m_colorTags = {"red", "green", "blue", "magenta", "yellow", "cyan"};
-    m_effectTags = {"rainbow", "pulse", "strobe", "wipe", "chase"};
-    m_colors = {ofColor::red, ofColor::green, ofColor::blue, ofColor::magenta, ofColor::yellow, ofColor::cyan};
+    m_colorTags = {"red", "green", "blue", "magenta", "yellow", "cyan", "pink", "purple", "orange", "white", "gold", "silver"};
+    m_effectTags = {"default", "fade", "sparkle", "flash", "move", "rainbow"};
+    m_colors = {ofColor::red, ofColor::green, ofColor::blue, ofColor::magenta, ofColor::yellow, ofColor::cyan, ofColor::pink,  ofColor::purple,  ofColor::orange,  ofColor::white,  ofColor::gold,  ofColor::silver};
     
 }
 
@@ -86,6 +87,7 @@ void InstagramManager::resetHashTagScene()
 {
     AppManager::getInstance().getGuiManager().onSceneChange("HASHTAG");
     AppManager::getInstance().getSceneManager().changeScene("HASHTAG");
+    m_currentEffectIndex = (int) ofRandom(1,6);
     AppManager::getInstance().getUdpManager().sendColorEffect(m_currentColorIndex, m_currentEffectIndex);
     ofLogNotice() <<"InstagramManager::resetHashTagScenes" ;
     m_scenesTimer.start(false, true);
@@ -171,7 +173,7 @@ void InstagramManager::urlTimerCompleteHandler( int &args )
     string url = start + m_triggerTags.front() + end;
     ofLoadURLAsync(url, m_triggerTags.front());
     
-    ofLogNotice() <<"InstagramManager::urlTimerCompleteHandler << load : " <<url;
+   // ofLogNotice() <<"InstagramManager::urlTimerCompleteHandler << load : " <<url;
 }
 
 
@@ -180,7 +182,7 @@ void InstagramManager::scenesTimerCompleteHandler( int &args )
     //ofLogNotice("InstagramManager::scenesTimerCompleteHandler -> Timer completed");
     AppManager::getInstance().getGuiManager().onSceneChange("DEFAULT");
     AppManager::getInstance().getSceneManager().changeScene("DEFAULT");
-    AppManager::getInstance().getUdpManager().sendColorEffect(m_currentColorIndex, 0);
+    AppManager::getInstance().getUdpManager().sendColorEffect(9, 0);
 }
 
 bool InstagramManager::checkColorTags(const string& result)

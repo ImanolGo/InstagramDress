@@ -53,6 +53,7 @@ void UdpManager::setupUdpConnection()
     //m_udpConnection.SetEnableBroadcast(true);
     m_udpConnection.Create(); //create the socket
     m_udpConnection.Bind(portReceive); //and bind to port
+    m_udpConnection.SetNonBlocking(true);
     
     
 //    string ip = AppManager::getInstance().getSettingsManager().getIpAddress();

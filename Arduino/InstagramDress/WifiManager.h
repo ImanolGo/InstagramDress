@@ -11,6 +11,7 @@
 #include "Arduino.h"
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
+#include "LedsManager.h"
 
 #define BUFFER_MAX 255
 #define PACKET_SIZE 4
@@ -18,10 +19,14 @@
 
 class WifiManager
 {
+  private:
+ 
+  LedsManager* ledsManager;  ///< it sends the commands to the leds manager
+  
 
   public:
     
-    WifiManager();
+    WifiManager(LedsManager* ledsManager);
     
     void setup();
     void update();
@@ -58,12 +63,16 @@ class WifiManager
 };
 
 
-WifiManager::WifiManager()
+WifiManager::WifiManager(LedsManager* ledsManager)
 {
+    this->ledsManager=ledsManager;
+    
     //ssid = "TPH Operations";
     //pass = "TheFUTURE!Sno3";
-    ssid = "HUAWEI-E5330-BD05";
-    pass = "1501i0mn";
+//    ssid = "HUAWEI-E5330-BD05";
+//    pass = "1501i0mn";
+    ssid = "Don't worry, be happy!";
+    pass = "whyistheskysohigh?";
     connected = false;
     localPort = 2390 ;
     sendPort = 5678;
@@ -120,7 +129,7 @@ void WifiManager::connectWifi() {
       Serial.print("WIFI STATUS ");Serial.println(WiFi.status());
       Serial.print("..");
       attempts++;
-      if(attempts>=10){
+      if(attempts>=15){
         break;
       }
    }
@@ -136,13 +145,15 @@ void WifiManager::connectWifi() {
     // if you get a connection, report back via serial:
     Udp.begin(localPort);
     Udp.flush();
+
+    connected = true;
 }
 
 
 
 void WifiManager::update()
 {
-    checkWifiConnection();
+    //checkWifiConnection();
     sendAutodiscovery();
     parseUdp();
 }
@@ -181,6 +192,9 @@ void WifiManager::parseMessage() {
         //Send to light manager
         int color = (int) packetBuffer[1];
         int effect = (int) packetBuffer[2];
+        this->ledsManager->setColorIndex(color);
+        this->ledsManager->setPattern(effect);
+        
         Serial.print("Color:" );
         Serial.println(color);
         Serial.print("Effect:" );
@@ -264,7 +278,7 @@ bool WifiManager::isMessage(char* _buffer, int bufferSize){
 
 void WifiManager::sendAutodiscovery()
 {
-  if(is_connected) return;
+  if(is_connected || !connected) return;
   
   if( millis() - autodiscovery_timer > DISCOVERY_TIMER)
   {

@@ -6,7 +6,7 @@
 #define DATA_PIN_1    12
 //#define DATA_PIN_1    15
 #define DATA_PIN_2    2
-#define NUM_LEDS 150
+#define NUM_LEDS 162
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)

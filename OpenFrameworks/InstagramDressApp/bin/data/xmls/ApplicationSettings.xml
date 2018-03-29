@@ -7,7 +7,7 @@
 
       <debug showCursor="1" setVerbose="1" logToFile = "0"/>
       <network ipAddress="192.168.8.22"  portUdpSend="2390" portUdpReceive="5678"/>
-      <app request_time_ms="1000"  playback_time_ms="10000"/>
+      <app request_time_ms="1000"  playback_time_ms="20000"/>
 
   </of_settings>
 
