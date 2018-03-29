@@ -8,6 +8,7 @@
 
  Software:
  * Adafruit_NeoPixel Library 
+ * WS2812FX Library
  * Wifi Library 
  * WifiUdp Library
  
@@ -27,7 +28,8 @@
 
 WifiManager wifiManager;
 
-void setup() {
+void setup() 
+{
   
     Serial.begin(115200);
     delay(1000);

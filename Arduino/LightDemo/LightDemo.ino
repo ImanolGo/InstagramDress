@@ -3,7 +3,8 @@
   #include <avr/power.h>
 #endif
 
-#define DATA_PIN_1    15
+#define DATA_PIN_1    12
+//#define DATA_PIN_1    15
 #define DATA_PIN_2    2
 #define NUM_LEDS 150
 

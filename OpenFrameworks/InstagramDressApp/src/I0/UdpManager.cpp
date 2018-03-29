@@ -55,13 +55,13 @@ void UdpManager::setupUdpConnection()
     m_udpConnection.Bind(portReceive); //and bind to port
     
     
-    string ip = AppManager::getInstance().getSettingsManager().getIpAddress();
-    int portSend = AppManager::getInstance().getSettingsManager().getUdpPortSend();
-   
-    m_udpConnection.Connect(ip.c_str(),portSend);
-    m_udpConnection.SetNonBlocking(true);
-    
-    ofLogNotice() <<"UdpManager::setupUdpReceiver -> sending to IP " << ip <<" to port " << portSend;
+//    string ip = AppManager::getInstance().getSettingsManager().getIpAddress();
+//    int portSend = AppManager::getInstance().getSettingsManager().getUdpPortSend();
+//
+//    m_udpConnection.Connect(ip.c_str(),portSend);
+//    m_udpConnection.SetNonBlocking(true);
+//
+//    ofLogNotice() <<"UdpManager::setupUdpReceiver -> sending to IP " << ip <<" to port " << portSend;
     
 }
 

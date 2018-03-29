@@ -14,6 +14,7 @@
 
 #define BUFFER_MAX 255
 #define PACKET_SIZE 4
+#define DISCOVERY_TIMER 1000
 
 class WifiManager
 {
@@ -42,13 +43,16 @@ class WifiManager
     String ssid;
     String pass;
     boolean connected;
+    boolean is_connected;
 
     WiFiUDP Udp;
     char packetBuffer[BUFFER_MAX];
     unsigned int localPort;
+    unsigned int sendPort;
     int receivedUdpLength;
 
     char PACKET_START;
+    char AUTO_DISCOVERY_COMMAND;
     char PACKET_END;
     unsigned long autodiscovery_timer;
 };
@@ -56,15 +60,20 @@ class WifiManager
 
 WifiManager::WifiManager()
 {
-    ssid = "TPH Operations";
-    pass = "TheFUTURE!Sno3";
+    //ssid = "TPH Operations";
+    //pass = "TheFUTURE!Sno3";
+    ssid = "HUAWEI-E5330-BD05";
+    pass = "1501i0mn";
     connected = false;
     localPort = 2390 ;
+    sendPort = 5678;
 
     PACKET_START = 'd';
+    AUTO_DISCOVERY_COMMAND = '?';
     PACKET_END = 255;
     autodiscovery_timer=0;
     receivedUdpLength = 0;
+    is_connected = false;
 }
 
 void WifiManager::setup()
@@ -87,11 +96,11 @@ void WifiManager::initializeWifi()
     }
 
   
-   IPAddress ip(192, 168, 20, 11); //  Fixed IP
-   IPAddress gateway(192, 168, 20, 1); // set gateway to match your network
-   IPAddress subnet(255, 255, 255, 0); // set subnet mask to match your network
-   
-    WiFi.config(ip, gateway, subnet);
+//   IPAddress ip(192, 168, 8, 22); //  Fixed IP
+//   IPAddress gateway(192, 168, 8, 22); // set gateway to match your network
+//   IPAddress subnet(255, 255, 255, 0); // set subnet mask to match your network
+//   
+//    WiFi.config(ip, gateway, subnet);
 
     Serial.println("WifiManager::connect wifi");
     connectWifi();
@@ -134,6 +143,7 @@ void WifiManager::connectWifi() {
 void WifiManager::update()
 {
     checkWifiConnection();
+    sendAutodiscovery();
     parseUdp();
 }
 
@@ -180,17 +190,17 @@ void WifiManager::parseMessage() {
 
 void WifiManager::connectToWiFi(const char * ssid, const char * pwd){
   Serial.println("Connecting to WiFi network: " + String(ssid));
-
-  IPAddress ip(192, 168, 20, 22); //  Fixed IP
-  IPAddress gateway(192, 168, 20, 1); // set gateway to match your network
-  IPAddress subnet(255, 255, 255, 0); // set subnet mask to match your network
+//
+//  IPAddress ip(192, 168, 8, 22); //  Fixed IP
+//  IPAddress gateway(192, 168, 8, 1); // set gateway to match your network
+//  IPAddress subnet(255, 255, 255, 0); // set subnet mask to match your network
 
   // delete old config
   WiFi.disconnect(true);
   delay(100);
   //register event handlerpin
   //WiFi.onEvent(WiFiEvent);
-  WiFi.config(ip, gateway, subnet);
+ // WiFi.config(ip, gateway, subnet);
   WiFi.setAutoReconnect(true);
   WiFi.setAutoConnect(true);
   
@@ -248,6 +258,33 @@ bool WifiManager::isMessage(char* _buffer, int bufferSize){
    }
 
    Serial.println("MESSAGE RECEIVED!!!");
+   is_connected = true;
    return true;
+}
+
+void WifiManager::sendAutodiscovery()
+{
+  if(is_connected) return;
+  
+  if( millis() - autodiscovery_timer > DISCOVERY_TIMER)
+  {
+      IPAddress ip = WiFi.localIP();
+      ip[3] = 255;
+
+      int packetLength = 3;
+      char bffr[packetLength];
+      bffr[0] = PACKET_START;
+      bffr[1] = AUTO_DISCOVERY_COMMAND;
+      bffr[2] = PACKET_END;
+      
+      // transmit broadcast package
+      Udp.beginPacket(ip, sendPort);
+      Udp.write(bffr,packetLength);
+      Udp.endPacket();
+
+      Serial.println("Autodiscovery sent!");
+      autodiscovery_timer = millis();
+  }
+  
 }
 
