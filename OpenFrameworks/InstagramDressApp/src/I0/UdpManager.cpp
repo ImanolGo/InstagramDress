@@ -11,6 +11,10 @@
 #include "UdpManager.h"
 #include "AppManager.h"
 
+#ifndef TARGET_WIN32
+#include "ofxMyIP.h"
+#endif
+
 
 const int UdpManager::UDP_MESSAGE_LENGHT = 100;
 
@@ -18,7 +22,7 @@ const char UdpManager::START_COMMAND = 'd';
 const char UdpManager::END_COMMAND = 255;
 const char UdpManager::AUTODISCOVERY_COMMAND = '?';
 
-UdpManager::UdpManager(): Manager()
+UdpManager::UdpManager(): Manager(),  m_broadcast(""), m_ip("")
 {
     //Intentionally left empty
 }
@@ -38,9 +42,11 @@ void UdpManager::setup()
     
     Manager::setup();
     
+    this->setupIP();
     this->setupUdpConnection();
     //this->createConnections();
     this->setupText();
+    this->setupTimer();
     
     ofLogNotice() <<"UdpManager::initialized" ;
 }
@@ -56,13 +62,16 @@ void UdpManager::setupUdpConnection()
     m_udpConnection.SetNonBlocking(true);
     
     
-//    string ip = AppManager::getInstance().getSettingsManager().getIpAddress();
-//    int portSend = AppManager::getInstance().getSettingsManager().getUdpPortSend();
-//
-//    m_udpConnection.Connect(ip.c_str(),portSend);
-//    m_udpConnection.SetNonBlocking(true);
-//
-//    ofLogNotice() <<"UdpManager::setupUdpReceiver -> sending to IP " << ip <<" to port " << portSend;
+    string ip = AppManager::getInstance().getSettingsManager().getIpAddress();
+    int portSend = AppManager::getInstance().getSettingsManager().getUdpPortSend();
+    
+    m_udpConnection.Connect(m_broadcast.c_str(),portSend);
+    //m_udpConnection.Connect(ip.c_str(),portSend);
+    m_udpConnection.SetEnableBroadcast(true);
+    
+    ofLogNotice() <<"UdpManager::setupUdpReceiver -> sending to IP " << m_broadcast <<" to port " << portSend;
+    
+    m_udpConnection.SetNonBlocking(true);
     
 }
 
@@ -102,9 +111,18 @@ void UdpManager::setupText()
 }
 
 
+void UdpManager::setupTimer()
+{
+    m_timer.setup( 1000 );
+    
+    m_timer.start( false ) ;
+    ofAddListener( m_timer.TIMER_COMPLETE , this, &UdpManager::timerCompleteHandler ) ;
+}
+
 void UdpManager::update()
 {
     this->updateReveivePackage();
+    m_timer.update();
 }
 
 void UdpManager::updateReveivePackage()
@@ -153,6 +171,8 @@ void UdpManager::parseMessage(char * buffer, int size)
         string ip; int port;
         m_udpConnection.GetRemoteAddr(ip, port);
         this->createConnection(ip, port );
+        this->sendDiscovered();
+        m_timer.stop();
     }
 }
 
@@ -193,6 +213,86 @@ void UdpManager::sendColorEffect(int colorIndex, int effectIndex)
     UdpData data; data.m_color = colorIndex; data.m_effect = effectIndex;
     this->sendData(data);
 }
+
+
+
+void UdpManager::timerCompleteHandler( int &args )
+{
+    m_timer.start(false);
+    //  cout<<"TIMER COMPLETED"<<endl;
+    this->sendAutodiscovery();
+}
+
+void UdpManager::setupIP()
+{
+    #ifdef TARGET_WIN32
+        system("ipfirst.cmd");
+        ofFile file("my.ip");
+        file >> m_ip;
+        //ofLog() << "My IP: " << m_ip;
+    
+    #else
+        ofxMyIP myip;
+        myip.setup();
+        m_ip = myip.getIpAddress();
+    
+    #endif
+    
+    ofLogNotice() <<"UdpManager::setupIP -> IP address: " << m_ip;
+    
+    m_broadcast = "";
+    auto stringSplit = ofSplitString(m_ip, ".");
+    
+    for(int i=0; i<stringSplit.size(); i++){
+        
+        if(i<stringSplit.size()-1){
+            m_broadcast += stringSplit[i];
+            m_broadcast += ".";
+        }
+        
+    }
+    
+    m_broadcast+="255";
+    ofLogNotice() <<"UdpManager::setupIP -> Broadcast IP address: " << m_broadcast;
+    
+    //    for(auto str: stringSplit){
+    //        char s = (char) ofToInt(str);
+    //        m_ipVector.push_back(s);
+    //        m_broadcast = str;
+    //        //ofLogNotice() <<"UdpManager::setupIP -> IP address: " << s;
+    //
+    //    }
+    
+}
+
+
+void UdpManager::sendAutodiscovery()
+{
+    string message="";
+    
+    message+= START_COMMAND;
+    message+= AUTODISCOVERY_COMMAND;
+    message+= END_COMMAND;
+    
+    m_udpConnection.Send(message.c_str(),message.length());
+    
+    ofLogNotice() <<"UdpManager::sendAutodiscovery << " << message;
+}
+
+void UdpManager::sendDiscovered()
+{
+    string message="";
+    
+    message+= START_COMMAND;
+    message+= 'O';
+    message+= 'K';
+    message+= END_COMMAND;
+    
+    m_udpConnection.Send(message.c_str(),message.length());
+    
+    ofLogNotice() <<"UdpManager::sendAutodiscovery << " << message;
+}
+
 
 
 

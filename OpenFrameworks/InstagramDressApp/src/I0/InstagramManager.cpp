@@ -11,7 +11,7 @@
 #include "AppManager.h"
 
 
-InstagramManager::InstagramManager(): Manager(), m_currentString(""), m_newTag(false), m_firstTag(true), m_currentCode(""), m_currentColorIndex(0), m_currentEffectIndex(0)
+InstagramManager::InstagramManager(): Manager(), m_currentString(""), m_newTag(false), m_firstTag(true), m_currentCode(""), m_currentColorIndex(0), m_currentEffectIndex(1)
 {
     //Intentionally left empty
 }
@@ -43,8 +43,8 @@ void InstagramManager::setup()
 void InstagramManager::setupTags()
 {
     //m_triggerTags.push_back("dorobaer");
-    //m_triggerTags.push_back("elktrocouture");
-    m_triggerTags.push_back("colors");
+    m_triggerTags.push_back("elektrocouture");
+    //m_triggerTags.push_back("colors");
     m_colorTags = {"red", "green", "blue", "magenta", "yellow", "cyan", "pink", "purple", "orange", "white", "gold", "silver"};
     m_effectTags = {"default", "fade", "sparkle", "flash", "move", "rainbow"};
     m_colors = {ofColor::red, ofColor::green, ofColor::blue, ofColor::magenta, ofColor::yellow, ofColor::cyan, ofColor::pink,  ofColor::purple,  ofColor::orange,  ofColor::white,  ofColor::gold,  ofColor::silver};
@@ -87,7 +87,6 @@ void InstagramManager::resetHashTagScene()
 {
     AppManager::getInstance().getGuiManager().onSceneChange("HASHTAG");
     AppManager::getInstance().getSceneManager().changeScene("HASHTAG");
-    m_currentEffectIndex = (int) ofRandom(1,6);
     AppManager::getInstance().getUdpManager().sendColorEffect(m_currentColorIndex, m_currentEffectIndex);
     ofLogNotice() <<"InstagramManager::resetHashTagScenes" ;
     m_scenesTimer.start(false, true);
@@ -116,6 +115,7 @@ bool InstagramManager::checkUpdate(const string& result, const string& tag)
         string resultTag;
         if(this->checkColorTags(hashtagString)){
             m_currentString = hashtagString;
+            //m_currentEffectIndex = (int) ofRandom(1,6);
             this->checkEffectTags(hashtagString);
             return true;
         }
@@ -225,6 +225,16 @@ const ofColor& InstagramManager::getCurrentColor() const
     }
     
     return m_colors.front();
+}
+
+void InstagramManager::setCurrentColor(int index)
+{
+    m_currentColorIndex = index;
+}
+
+void InstagramManager::setCurrentEffect(int index)
+{
+    m_currentEffectIndex = index;
 }
 
 

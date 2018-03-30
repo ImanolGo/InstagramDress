@@ -71,7 +71,15 @@ private:
     
     void setupGuiScenes();
     
+    void setupGuiColors();
+    
+    void setupGuiEffects();
+    
     void updateScenes();
+    
+    void updateColors();
+    
+    void updateEffects();
     
 private:
     
@@ -81,9 +89,15 @@ private:
     ofParameter<float>	m_guiFPS;
     
     ofxGuiMatrix        m_matrixScenes;
+    ofxGuiMatrix        m_matrixColors;
+    ofxGuiMatrix        m_matrixEffects;
     vector<ofParameter<bool>>   m_scenesParameters;
+    vector<ofParameter<bool>>   m_colorParameters;
+    vector<ofParameter<bool>>   m_effectsParameters;
     
     int         m_currentScene;
+    int         m_currentColor;
+    int         m_currentEffect;
     
     
     bool        m_showGui;  //It defines the whether the gui should be shown or not

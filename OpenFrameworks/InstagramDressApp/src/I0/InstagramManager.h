@@ -46,6 +46,16 @@ public:
     
     const ofColor& getCurrentColor() const;
     
+    void setCurrentColor(int index);
+    
+    void setCurrentEffect(int index);
+    
+    const vector<string>& getColorNames() const {return m_colorTags;}
+    
+    const vector<string>& getEffectNames() const {return m_effectTags;}
+    
+    void resetHashTagScene();
+    
 private:
     
     void setupTimers();
@@ -64,7 +74,6 @@ private:
     
     bool checkEffectTags(const string& result);
     
-    void resetHashTagScene();
     
 private:
     

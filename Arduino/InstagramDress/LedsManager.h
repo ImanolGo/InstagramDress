@@ -85,9 +85,7 @@ class LedsManager{
 void LedsManager::setup()
 {
     this->setupLeds();
-    this->setDefault();
-    this->setColor(0,0,255);
-    
+    this->setDefault();   
 }
 
 
@@ -234,21 +232,22 @@ void LedsManager::setMode(uint8_t m, uint16_t s)
 
 void LedsManager::setDefault()
 {
-    uint8_t mode_ = FX_MODE_STATIC;
-    uint16_t speed_ = 1000;
+    uint8_t mode_ = FX_MODE_RUNNING_LIGHTS;
+    uint16_t speed_ = 2500;
     this->setMode(mode_,speed_);
+    this->setColor(255,255,255);
 }
 
 void LedsManager::setRainbow()
 {
     uint8_t mode_ = FX_MODE_RAINBOW_CYCLE;
-    uint16_t speed_ = 1500;
+    uint16_t speed_ = 2500;
     this->setMode(mode_,speed_);
 }
 void LedsManager::setFade()
 {
-    uint8_t mode_ = FX_MODE_FADE;
-    uint16_t speed_ = 2000;
+    uint8_t mode_ = FX_MODE_BREATH;
+    uint16_t speed_ = 1000;
     this->setMode(mode_,speed_);
 }
 

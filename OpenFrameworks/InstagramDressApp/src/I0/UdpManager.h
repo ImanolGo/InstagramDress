@@ -13,8 +13,7 @@
 #include "Manager.h"
 #include "ofxNetwork.h"
 #include "TextVisual.h"
-
-
+#include "ofxSimpleTimer.h"
 
 
 //=========================== UdpData =======================================
@@ -68,6 +67,8 @@ public:
     void sendData(const UdpData& data);
     
     void sendColorEffect(int colorIndex, int effectIndex);
+    
+    void timerCompleteHandler( int &args ) ;
 
 private:
     
@@ -76,6 +77,10 @@ private:
         
     //! setups the text visuals
     void setupText();
+    
+    void setupTimer();
+    
+    void setupIP();
     
     //! updates receiving information text visuals
     void updateReceiveText(const string& message);
@@ -91,13 +96,19 @@ private:
     void receivedHeartbeat(char _id, char val1, char val2);
     
     void createConnection(string& ip, int port);
-
+    
+    void sendAutodiscovery();
+    
+    void sendDiscovered();
     
  private:
     
 
     ofxUDPManager          m_udpConnection;        ///< ofxUdpManager  class
     ofPtr<TextVisual>      m_udpText;
+    ofxSimpleTimer         m_timer;
+    string                 m_broadcast;
+    string                 m_ip;
     
 };
 

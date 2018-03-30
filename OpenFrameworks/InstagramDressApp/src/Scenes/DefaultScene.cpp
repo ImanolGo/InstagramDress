@@ -22,21 +22,26 @@ void DefaultScene::setup() {
 
 void DefaultScene::setupColor()
 {
-    m_color.setHueAngle(m_hue);
-    m_color.setSaturation(255);
-    m_color.setBrightness(255);
+    m_color = ofColor::white;
+//    m_color.setHueAngle(m_hue);
+//    m_color.setSaturation(255);
+//    m_color.setBrightness(255);
 }
 
 void DefaultScene::update() {
-    float dt = ofGetLastFrameTime();
-    m_hue = fmod(m_hue + dt*30,360);
-    //ofLogNotice() << "DefaultScene::update -> hue: " << m_hue;
-    
-    m_color.setHueAngle(m_hue);
+    this->updateColor();
 }
 
 void DefaultScene::updateColor() {
-    this->updateColor();
+   // float dt = ofGetLastFrameTime();
+    //    m_hue = fmod(m_hue + dt*30,360);
+    //    //ofLogNotice() << "DefaultScene::update -> hue: " << m_hue;
+    //    m_color.setHueAngle(m_hue);
+
+    float sine = sin(ofGetElapsedTimef()*2);
+    int brightness = ofMap(sine, -1, 1, 0, 255);
+    m_color.setBrightness(brightness);
+    //ofLogNotice() << "DefaultScene::updateColor ->  " << brightness;
 }
 
 

@@ -19,7 +19,7 @@ const string GuiManager::GUI_SETTINGS_NAME = "GUI";
 const int GuiManager::GUI_WIDTH = 350;
 
 
-GuiManager::GuiManager(): Manager(), m_showGui(true), m_currentScene(-1)
+GuiManager::GuiManager(): Manager(), m_showGui(true), m_currentScene(-1), m_currentColor(-1), m_currentEffect(-1)
 {
     //Intentionally left empty
 }
@@ -42,6 +42,8 @@ void GuiManager::setup()
     
     this->setupGuiParameters();
     this->setupGuiScenes();
+    this->setupGuiColors();
+    this->setupGuiEffects();
     this->loadGuiValues();
     this->onSceneChange("DEFAULT");
     
@@ -59,7 +61,6 @@ void GuiManager::setupGuiParameters()
     //ofxGuiSetFont( "fonts/open-sans/OpenSans-Semibold.ttf", 9 );
     
 }
-
 void GuiManager::setupGuiScenes()
 {
     auto sceneManager = &AppManager::getInstance().getSceneManager();
@@ -75,7 +76,7 @@ void GuiManager::setupGuiScenes()
         m_scenesParameters.push_back(ofParameter<bool>(scene,false));
     }
     
-    m_matrixScenes.setup("Presets",1);
+    m_matrixScenes.setup("Scenes",1);
     for(unsigned int i = 0; i < m_scenesParameters.size(); i++) {
         //m_scenesParameters.at(i).addListener(this, &GuiManager::onMatrixSceneChange);
         m_matrixScenes.add(new ofxMinimalToggle(m_scenesParameters.at(i)));
@@ -86,6 +87,46 @@ void GuiManager::setupGuiScenes()
     
     m_gui.add(&m_matrixScenes);
 }
+
+
+void GuiManager::setupGuiColors()
+{
+    auto colorNames = AppManager::getInstance().getInstagramManager().getColorNames();
+    
+    for(auto color: colorNames)
+    {
+        m_colorParameters.push_back(ofParameter<bool>(color,false));
+    }
+    
+    m_matrixColors.setup("Colors",1);
+    for(unsigned int i = 0; i < m_colorParameters.size(); i++) {
+        m_matrixColors.add(new ofxMinimalToggle(m_colorParameters.at(i)));
+    }
+
+    m_matrixColors.allowMultipleActiveToggles(false);
+    
+    m_gui.add(&m_matrixColors);
+}
+
+void GuiManager::setupGuiEffects()
+{
+    auto effectNames = AppManager::getInstance().getInstagramManager().getEffectNames();
+    
+    for(auto effect: effectNames)
+    {
+        m_effectsParameters.push_back(ofParameter<bool>(effect,false));
+    }
+    
+    m_matrixEffects.setup("Effects",1);
+    for(unsigned int i = 0; i < m_effectsParameters.size(); i++) {
+        m_matrixEffects.add(new ofxMinimalToggle(m_effectsParameters.at(i)));
+    }
+ 
+    m_matrixEffects.allowMultipleActiveToggles(false);
+    
+    m_gui.add(&m_matrixEffects);
+}
+
 
 void GuiManager::draw()
 {
@@ -102,6 +143,8 @@ void GuiManager::draw()
 void GuiManager::update()
 {
     this->updateScenes();
+    this->updateColors();
+    this->updateEffects();
 }
 
 void GuiManager::updateScenes()
@@ -112,6 +155,35 @@ void GuiManager::updateScenes()
         //ofLogNotice() <<"GuiManager::updateScenes -> Current Scene: " << m_currentScene;
         AppManager::getInstance().getSceneManager().changeScene(m_currentScene);
         m_matrixScenes.setActiveToggle(m_currentScene);
+        
+    }
+}
+
+
+void GuiManager::updateColors()
+{
+    if(m_currentColor != m_matrixColors.getActiveToggleIndex()){
+        
+        m_currentColor = m_matrixColors.getActiveToggleIndex();
+        AppManager::getInstance().getInstagramManager().setCurrentColor(m_currentColor);
+        AppManager::getInstance().getInstagramManager().resetHashTagScene();
+        //ofLogNotice() <<"GuiManager::updateScenes -> Current Scene: " << m_currentScene;
+        //AppManager::getInstance().getSceneManager().changeScene(m_currentColor);
+        m_matrixColors.setActiveToggle(m_currentColor);
+        
+    }
+}
+
+void GuiManager::updateEffects()
+{
+    if(m_currentEffect != m_matrixEffects.getActiveToggleIndex()){
+        
+        m_currentEffect = m_matrixEffects.getActiveToggleIndex();
+        AppManager::getInstance().getInstagramManager().setCurrentEffect(m_currentEffect);
+        AppManager::getInstance().getInstagramManager().resetHashTagScene();
+        //ofLogNotice() <<"GuiManager::updateScenes -> Current Scene: " << m_currentScene;
+        //AppManager::getInstance().getSceneManager().changeScene(m_currentColor);
+        m_matrixEffects.setActiveToggle(m_currentEffect);
         
     }
 }
