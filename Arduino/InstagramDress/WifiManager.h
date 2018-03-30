@@ -16,6 +16,7 @@
 #define BUFFER_MAX 255
 #define PACKET_SIZE 4
 #define DISCOVERY_TIMER 1000
+#define WIFI_TIMEOUT 30000              // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
 
 class WifiManager
 {
@@ -60,6 +61,7 @@ class WifiManager
     char AUTO_DISCOVERY_COMMAND;
     char PACKET_END;
     unsigned long autodiscovery_timer;
+    unsigned long last_wifi_check_time;
 };
 
 
@@ -69,10 +71,8 @@ WifiManager::WifiManager(LedsManager* ledsManager)
     
     //ssid = "TPH Operations";
     //pass = "TheFUTURE!Sno3";
-//    ssid = "HUAWEI-E5330-BD05";
-//    pass = "1501i0mn";
-    ssid = "Don't worry, be happy!";
-    pass = "whyistheskysohigh?";
+    ssid = "HUAWEI-E5330-BD05";
+    pass = "1501i0mn";
     connected = false;
     localPort = 2390 ;
     sendPort = 5678;
@@ -83,6 +83,7 @@ WifiManager::WifiManager(LedsManager* ledsManager)
     autodiscovery_timer=0;
     receivedUdpLength = 0;
     is_connected = false;
+    last_wifi_check_time = 0;
 }
 
 void WifiManager::setup()
@@ -122,17 +123,19 @@ void WifiManager::connectWifi() {
    //Serial.println(ssid);
    WiFi.begin(ssid.c_str(), pass.c_str());
 
-   int attempts = 0;
-  
-   while (WiFi.status() != WL_CONNECTED) {
+    unsigned long connect_start = millis();
+    while(WiFi.status() != WL_CONNECTED) {
       delay(500);
-      Serial.print("WIFI STATUS ");Serial.println(WiFi.status());
-      Serial.print("..");
-      attempts++;
-      if(attempts>=15){
-        break;
+      Serial.print(".");
+  
+      if(millis() - connect_start > WIFI_TIMEOUT) {
+        Serial.println();
+        Serial.print("Tried ");
+        Serial.print(WIFI_TIMEOUT);
+        Serial.print("ms. Resetting ESP now.");
+        ESP.reset();
       }
-   }
+    }
  
    Serial.print("\nConnected to SSID: ");
    Serial.println(ssid);
@@ -226,11 +229,17 @@ void WifiManager::connectToWiFi(const char * ssid, const char * pwd){
 
 
 void WifiManager::checkWifiConnection(){
-  int status = WiFi.status();
-  if(status != WL_CONNECTED) {
-       connectWifi();
-       //printWiFiStatus();
-   }
+    unsigned long now = millis();
+   if(now - last_wifi_check_time > WIFI_TIMEOUT) {
+    Serial.print("Checking WiFi... ");
+    if(WiFi.status() != WL_CONNECTED) {
+      Serial.println("WiFi connection lost. Reconnecting...");
+      connectWifi();
+    } else {
+      Serial.println("OK");
+    }
+    last_wifi_check_time = now;
+  }
 }
 
 
