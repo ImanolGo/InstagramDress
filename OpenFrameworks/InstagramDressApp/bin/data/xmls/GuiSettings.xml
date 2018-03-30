@@ -1,24 +1,24 @@
 <group>
-	<FPS>56.4702</FPS>
+	<FPS>59.9907</FPS>
 	<group/>
 	<DEFAULT>0</DEFAULT>
 	<HASHTAG>1</HASHTAG>
 	<BLANK>0</BLANK>
 <red>0</red>
 	<green>0</green>
-	<blue>1</blue>
+	<blue>0</blue>
 	<magenta>0</magenta>
 	<yellow>0</yellow>
 	<cyan>0</cyan>
 	<pink>0</pink>
 	<purple>0</purple>
-	<orange>0</orange>
+	<orange>1</orange>
 	<white>0</white>
 	<gold>0</gold>
 	<silver>0</silver>
-<default>0</default>
+<default>1</default>
 	<fade>0</fade>
-	<sparkle>1</sparkle>
+	<sparkle>0</sparkle>
 	<flash>0</flash>
 	<move>0</move>
 	<rainbow>0</rainbow>

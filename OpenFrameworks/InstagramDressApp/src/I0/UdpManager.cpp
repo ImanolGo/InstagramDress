@@ -30,6 +30,7 @@ UdpManager::UdpManager(): Manager(),  m_broadcast(""), m_ip("")
 UdpManager::~UdpManager()
 {
    ofLogNotice() << "UdpManager::destructor";
+   m_udpConnection.Close();
 }
 
 
@@ -47,6 +48,7 @@ void UdpManager::setup()
     //this->createConnections();
     this->setupText();
     this->setupTimer();
+	this->sendAutodiscovery();
     
     ofLogNotice() <<"UdpManager::initialized" ;
 }
@@ -113,7 +115,7 @@ void UdpManager::setupText()
 
 void UdpManager::setupTimer()
 {
-    m_timer.setup( 1000 );
+    m_timer.setup( 60000 );
     
     m_timer.start( false ) ;
     ofAddListener( m_timer.TIMER_COMPLETE , this, &UdpManager::timerCompleteHandler ) ;

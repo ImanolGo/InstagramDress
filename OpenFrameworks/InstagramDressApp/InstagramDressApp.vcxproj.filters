@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxFpsPlotter.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxGuiBaseDraws.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxGuiGroupExtended.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxGuiMatrix.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxGuiPage.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxGuiSpacer.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxGuiZoomableBaseDraws.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxLabelExtended.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxMasterSlaveControl.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxMinimalButton.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxMinimalToggle.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxPanelExtended.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxRotarySlider.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxTabbedPages.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxValuePlotter.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxGuiExtended\src\ofxVerticalSlider.cpp">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxJSON\libs\jsoncpp\src\jsoncpp.cpp">
+      <Filter>src\Addons\ofxJSON\libs\jsoncpp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxJSON\src\ofxJSONElement.cpp">
+      <Filter>src\Addons\ofxJSON\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSceneManager\src\ofxSceneManager.cpp">
+      <Filter>src\Addons\ofxSceneManager\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSimpleTimer\src\ofxSimpleTimer.cpp">
+      <Filter>src\Addons\ofxSimpleTimer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSvg\libs\svgTiny\src\src_colors.cpp">
+      <Filter>src\Addons\ofxSvg\libs\svgTiny\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSvg\libs\svgTiny\src\svgtiny.cpp">
+      <Filter>src\Addons\ofxSvg\libs\svgTiny\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSvg\libs\svgTiny\src\svgtiny_gradient.cpp">
+      <Filter>src\Addons\ofxSvg\libs\svgTiny\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSvg\libs\svgTiny\src\svgtiny_list.cpp">
+      <Filter>src\Addons\ofxSvg\libs\svgTiny\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxSvg\src\ofxSvg.cpp">
+      <Filter>src\Addons\ofxSvg\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTrueTypeFontUC\src\ofxTrueTypeFontUC.cpp">
+      <Filter>src\Addons\ofxTrueTypeFontUC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasing.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingBack.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingBounce.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingCirc.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingCubic.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingElastic.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingExpo.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingLinear.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingQuad.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingQuart.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingQuint.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\Easings\ofxEasingSine.cpp">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxTween\src\ofxTween.cpp">
+      <Filter>src\Addons\ofxTween\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxUnicode\src\ofTextConverter.cpp">
+      <Filter>src\Addons\ofxUnicode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxUnicode\src\ofUnicode.cpp">
+      <Filter>src\Addons\ofxUnicode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Addons\ofxUnicode\src\ofUTF8.cpp">
+      <Filter>src\Addons\ofxUnicode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\3D\CameraAnimations.cpp">
+      <Filter>src\Engine\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\3D\CameraAnimationsManager.cpp">
+      <Filter>src\Engine\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\3D\CameraManager.cpp">
+      <Filter>src\Engine\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\3D\LightManager.cpp">
+      <Filter>src\Engine\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Resources\ResourceManager.cpp">
+      <Filter>src\Engine\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Tools\EngineFont.cpp">
+      <Filter>src\Engine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\ImageVisual.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\ImageVisual3D.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\RectangleVisual.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\SvgVisual.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\TextVisual.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\VideoVisual.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\ViewManager.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\VisualEffects.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Visuals\VisualEffectsManager.cpp">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\I0\InstagramManager.cpp">
+      <Filter>src\I0</Filter>
+    </ClCompile>
+    <ClCompile Include="src\I0\KeyboardManager.cpp">
+      <Filter>src\I0</Filter>
+    </ClCompile>
+    <ClCompile Include="src\I0\UdpManager.cpp">
+      <Filter>src\I0</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layout\GuiManager.cpp">
+      <Filter>src\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layout\LayoutManager.cpp">
+      <Filter>src\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main\AppManager.cpp">
+      <Filter>src\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main\InstagramDressApp.cpp">
+      <Filter>src\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main\main.cpp">
+      <Filter>src\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main\SettingsManager.cpp">
+      <Filter>src\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\BlankScene.cpp">
+      <Filter>src\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\DefaultScene.cpp">
+      <Filter>src\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\HashTagScene.cpp">
+      <Filter>src\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SceneManager.cpp">
+      <Filter>src\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxButton.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxGuiGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxLabel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxPanel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSlider.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSliderGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxToggle.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxTCPClient.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxTCPManager.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxTCPServer.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxUDPManager.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons">
+      <UniqueIdentifier>{44C2E31E-3A94-67F8-2669-D1C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxGuiExtended">
+      <UniqueIdentifier>{054FA276-0C43-CFE4-A1BD-F243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxGuiExtended\src">
+      <UniqueIdentifier>{0C13A692-6062-523A-87F3-9DF0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON">
+      <UniqueIdentifier>{E1F3341F-1EBA-63BF-8766-4358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON\libs">
+      <UniqueIdentifier>{9CF56A1A-04BE-BB6E-BF39-A2A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON\libs\jsoncpp">
+      <UniqueIdentifier>{3E603584-4DA7-E0FB-51E7-C6D9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON\libs\jsoncpp\include">
+      <UniqueIdentifier>{68F859DE-66AB-1F76-0CB0-16C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON\libs\jsoncpp\include\json">
+      <UniqueIdentifier>{E0CD67B4-DF48-6D50-39B7-E781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON\libs\jsoncpp\src">
+      <UniqueIdentifier>{98CA6AEA-C76C-327E-77A8-FB71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxJSON\src">
+      <UniqueIdentifier>{BF76412D-ADFF-301E-7E9A-74F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSceneManager">
+      <UniqueIdentifier>{E10F7824-20F5-0F8A-BC6F-6F99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSceneManager\src">
+      <UniqueIdentifier>{4EC969FD-B939-2CC5-5522-6456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSimpleTimer">
+      <UniqueIdentifier>{74AEBA5E-2F47-F8C4-14FE-70BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSimpleTimer\src">
+      <UniqueIdentifier>{04B539E9-0F22-138F-5D6F-2E70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSvg">
+      <UniqueIdentifier>{79EB84A9-D004-C2E7-357C-2530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSvg\libs">
+      <UniqueIdentifier>{7BD6BBDE-8C6D-9150-27AC-E26F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSvg\libs\svgTiny">
+      <UniqueIdentifier>{C78E5414-D72F-CCA2-8EAF-13C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSvg\libs\svgTiny\src">
+      <UniqueIdentifier>{49D54A19-5305-6CA1-BC00-8D89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxSvg\src">
+      <UniqueIdentifier>{09D10F06-E1D8-2B77-16C5-E777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxTrueTypeFontUC">
+      <UniqueIdentifier>{7BF42BF0-48BE-8EA0-ABFF-F85F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxTrueTypeFontUC\src">
+      <UniqueIdentifier>{DD130F41-A30B-049C-E92A-B0F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxTween">
+      <UniqueIdentifier>{28A94753-E5EE-8B8D-F018-1B8C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxTween\src">
+      <UniqueIdentifier>{B9A1CE9E-585F-3DFE-8064-E178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxTween\src\Easings">
+      <UniqueIdentifier>{4F67B192-F5E6-04C9-4713-CDEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode">
+      <UniqueIdentifier>{E82891DC-E954-015E-EE88-6378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs">
+      <UniqueIdentifier>{1A376A3D-FCFE-EFC1-BFBB-A35D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp">
+      <UniqueIdentifier>{0F7F3B35-5258-07FE-ADB1-4F2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp\include">
+      <UniqueIdentifier>{F579F39D-8979-EA8C-272A-C179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp\include\utf8">
+      <UniqueIdentifier>{EEF4518C-E9C0-8A7C-C3DF-1F1C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp\src">
+      <UniqueIdentifier>{85F387EB-59FD-F73F-CD3E-DD2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1">
+      <UniqueIdentifier>{91D10340-89E0-54CF-7F4E-CD69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source">
+      <UniqueIdentifier>{E91A67D0-632E-8243-8C5C-6952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8">
+      <UniqueIdentifier>{E72A142D-91C3-F326-32F1-8422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Addons\ofxUnicode\src">
+      <UniqueIdentifier>{3CFC747B-2AEC-E04F-A377-698C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine">
+      <UniqueIdentifier>{33FA9329-3569-5A99-A4AF-D67C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\3D">
+      <UniqueIdentifier>{EFB4B634-3010-294F-63BC-3A8C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Resources">
+      <UniqueIdentifier>{2975D63A-2923-8592-710A-D9A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Tools">
+      <UniqueIdentifier>{35A02FAA-7975-79C0-ECB0-0B79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Visuals">
+      <UniqueIdentifier>{F737640D-9F42-AC92-7F50-BCBC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\I0">
+      <UniqueIdentifier>{2328543A-8C7A-E3DD-7D4D-BD0B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Layout">
+      <UniqueIdentifier>{48DE4E4C-4D44-6A7D-6721-F29B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Main">
+      <UniqueIdentifier>{B604249B-4527-FF17-F2E4-84CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scenes">
+      <UniqueIdentifier>{6A6AB684-C3B3-7377-6FC5-6FBF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui">
+      <UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui\src">
+      <UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNetwork">
+      <UniqueIdentifier>{01A15744-29A6-108D-08E9-83A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNetwork\src">
+      <UniqueIdentifier>{3D1C10C7-8F35-E796-9C70-F5F3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxFpsPlotter.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiBaseDraws.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiExtended.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiGroupExtended.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiMatrix.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiPage.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiSpacer.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxGuiZoomableBaseDraws.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxLabelExtended.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxMasterSlaveControl.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxMinimalButton.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxMinimalToggle.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxPanelExtended.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxRotarySlider.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxTabbedPages.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxValuePlotter.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxGuiExtended\src\ofxVerticalSlider.h">
+      <Filter>src\Addons\ofxGuiExtended\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxJSON\libs\jsoncpp\include\json\json-forwards.h">
+      <Filter>src\Addons\ofxJSON\libs\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxJSON\libs\jsoncpp\include\json\json.h">
+      <Filter>src\Addons\ofxJSON\libs\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxJSON\src\ofxJSON.h">
+      <Filter>src\Addons\ofxJSON\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxJSON\src\ofxJSONElement.h">
+      <Filter>src\Addons\ofxJSON\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxSceneManager\src\ofxScene.h">
+      <Filter>src\Addons\ofxSceneManager\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxSceneManager\src\ofxSceneManager.h">
+      <Filter>src\Addons\ofxSceneManager\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxSimpleTimer\src\ofxSimpleTimer.h">
+      <Filter>src\Addons\ofxSimpleTimer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxSvg\libs\svgTiny\src\svgtiny.h">
+      <Filter>src\Addons\ofxSvg\libs\svgTiny\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxSvg\libs\svgTiny\src\svgtiny_internal.h">
+      <Filter>src\Addons\ofxSvg\libs\svgTiny\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxSvg\src\ofxSvg.h">
+      <Filter>src\Addons\ofxSvg\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTrueTypeFontUC\src\ofxTrueTypeFontUC.h">
+      <Filter>src\Addons\ofxTrueTypeFontUC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\easing_terms_of_use.html">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasing.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingBack.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingBounce.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingCirc.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingCubic.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingElastic.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingExpo.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingLinear.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingQuad.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingQuart.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingQuint.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\Easings\ofxEasingSine.h">
+      <Filter>src\Addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxTween\src\ofxTween.h">
+      <Filter>src\Addons\ofxTween\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\include\utf8\checked.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\include\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\include\utf8\core.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\include\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\include\utf8\unchecked.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\include\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\include\utf8.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8\checked.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8\core.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8\unchecked.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source\utf8.h">
+      <Filter>src\Addons\ofxUnicode\libs\utf8cpp\src\utf8_v2_3_1\source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\src\ofTextConverter.h">
+      <Filter>src\Addons\ofxUnicode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\src\ofUnicode.h">
+      <Filter>src\Addons\ofxUnicode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addons\ofxUnicode\src\ofUTF8.h">
+      <Filter>src\Addons\ofxUnicode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\3D\CameraAnimations.h">
+      <Filter>src\Engine\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\3D\CameraAnimationsManager.h">
+      <Filter>src\Engine\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\3D\CameraManager.h">
+      <Filter>src\Engine\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\3D\LightManager.h">
+      <Filter>src\Engine\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Resources\ResourceManager.h">
+      <Filter>src\Engine\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Tools\EngineFont.h">
+      <Filter>src\Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\BasicVisual.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\ImageVisual.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\ImageVisual3D.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\RectangleVisual.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\SvgVisual.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\TextVisual.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\VideoVisual.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\ViewManager.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\VisualEffects.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Visuals\VisualEffectsManager.h">
+      <Filter>src\Engine\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\I0\InstagramManager.h">
+      <Filter>src\I0</Filter>
+    </ClInclude>
+    <ClInclude Include="src\I0\KeyboardManager.h">
+      <Filter>src\I0</Filter>
+    </ClInclude>
+    <ClInclude Include="src\I0\UdpManager.h">
+      <Filter>src\I0</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layout\GuiManager.h">
+      <Filter>src\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layout\LayoutManager.h">
+      <Filter>src\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Main\AppManager.h">
+      <Filter>src\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Main\InstagramDressApp.h">
+      <Filter>src\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Main\Manager.h">
+      <Filter>src\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Main\managers.h">
+      <Filter>src\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Main\SettingsManager.h">
+      <Filter>src\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\BlankScene.h">
+      <Filter>src\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\DefaultScene.h">
+      <Filter>src\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\HashTagScene.h">
+      <Filter>src\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\SceneManager.h">
+      <Filter>src\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\scenes.h">
+      <Filter>src\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxButton.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxGuiGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxLabel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxPanel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSlider.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSliderGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxGui\src\ofxToggle.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxNetwork.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxNetworkUtils.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxTCPClient.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxTCPManager.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxTCPServer.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Applications\of_v0.9.8_vs_release\of_v0.9.8_vs_release\addons\ofxNetwork\src\ofxUDPManager.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bin\data\images\icons\IG_Software.ico" />
+    <Image Include="icon.ico" />
+  </ItemGroup>
+</Project>
