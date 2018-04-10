@@ -45,9 +45,9 @@ void InstagramManager::setupTags()
     //m_triggerTags.push_back("dorobaer");
     m_triggerTags.push_back("elektrocouture");
     //m_triggerTags.push_back("colors");
-    m_colorTags = {"red", "green", "blue", "magenta", "yellow", "cyan", "pink", "purple", "orange", "white", "gold", "silver"};
+    m_colorTags = {"red", "emerald", "blue", "turquoise", "pink", "violet", "white", "lavender"};
     m_effectTags = {"default", "fade", "sparkle", "flash", "move", "rainbow"};
-    m_colors = {ofColor::red, ofColor::green, ofColor::blue, ofColor::magenta, ofColor::yellow, ofColor::cyan, ofColor::pink,  ofColor::purple,  ofColor::orange,  ofColor::white,  ofColor::gold,  ofColor::silver};
+    m_colors = {ofColor::red, ofColor::seaGreen, ofColor::blue, ofColor::turquoise, ofColor::pink,  ofColor::violet,  ofColor::white,  ofColor::lavender};
     
 }
 
@@ -72,7 +72,9 @@ void InstagramManager::update()
    
     if(m_newTag){
         m_newTag = false;
-        this->resetHashTagScene();
+        AppManager::getInstance().getGuiManager().setColor(m_currentColorIndex);
+        AppManager::getInstance().getGuiManager().setEffect(m_currentEffectIndex);
+        //this->resetHashTagScene();
     }
 }
 
@@ -87,6 +89,7 @@ void InstagramManager::resetHashTagScene()
 {
     AppManager::getInstance().getGuiManager().onSceneChange("HASHTAG");
     AppManager::getInstance().getSceneManager().changeScene("HASHTAG");
+    AppManager::getInstance().getGuiManager().onSceneChange("HASHTAG");
     AppManager::getInstance().getUdpManager().sendColorEffect(m_currentColorIndex, m_currentEffectIndex);
     ofLogNotice() <<"InstagramManager::resetHashTagScenes" ;
     m_scenesTimer.start(false, true);
@@ -113,10 +116,10 @@ bool InstagramManager::checkUpdate(const string& result, const string& tag)
         ofLogNotice() <<"InstagramManager::parseJson -> " << tag << ": "<< m_currentCode;
         ofLogNotice() <<"InstagramManager::result -> " << hashtagString;
         string resultTag;
-        if(this->checkColorTags(hashtagString)){
+        if(this->checkEffectTags(hashtagString)){
             m_currentString = hashtagString;
             //m_currentEffectIndex = (int) ofRandom(1,6);
-            this->checkEffectTags(hashtagString);
+            this->checkColorTags(hashtagString);
             return true;
         }
         

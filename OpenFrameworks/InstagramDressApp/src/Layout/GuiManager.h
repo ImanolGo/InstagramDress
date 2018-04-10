@@ -63,6 +63,10 @@ public:
     
     void onMatrixSceneChange(bool& value);
     
+    void setColor(int value) ;
+    
+    void setEffect(int value);
+    
 private:
     
     void setupGuiParameters();

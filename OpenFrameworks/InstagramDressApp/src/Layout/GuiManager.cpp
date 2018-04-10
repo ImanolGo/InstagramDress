@@ -44,8 +44,8 @@ void GuiManager::setup()
     this->setupGuiScenes();
     this->setupGuiColors();
     this->setupGuiEffects();
-    this->loadGuiValues();
-    this->onSceneChange("DEFAULT");
+  //  this->loadGuiValues();
+    //this->onSceneChange("DEFAULT");
     
     ofLogNotice() <<"GuiManager::initialized";
     
@@ -167,7 +167,7 @@ void GuiManager::updateColors()
         m_currentColor = m_matrixColors.getActiveToggleIndex();
         AppManager::getInstance().getInstagramManager().setCurrentColor(m_currentColor);
         AppManager::getInstance().getInstagramManager().resetHashTagScene();
-        //ofLogNotice() <<"GuiManager::updateScenes -> Current Scene: " << m_currentScene;
+        ofLogNotice() <<"GuiManager::updateColors -> Current Color: " << m_currentColor;
         //AppManager::getInstance().getSceneManager().changeScene(m_currentColor);
         m_matrixColors.setActiveToggle(m_currentColor);
         
@@ -180,8 +180,9 @@ void GuiManager::updateEffects()
         
         m_currentEffect = m_matrixEffects.getActiveToggleIndex();
         AppManager::getInstance().getInstagramManager().setCurrentEffect(m_currentEffect);
+        
         AppManager::getInstance().getInstagramManager().resetHashTagScene();
-        //ofLogNotice() <<"GuiManager::updateScenes -> Current Scene: " << m_currentScene;
+        ofLogNotice() <<"GuiManager::updateEffects -> Current Effect: " << m_currentEffect;
         //AppManager::getInstance().getSceneManager().changeScene(m_currentColor);
         m_matrixEffects.setActiveToggle(m_currentEffect);
         
@@ -244,3 +245,17 @@ void GuiManager::onMatrixSceneChange(bool& value)
     }
 }
 
+
+void GuiManager::setColor(int value) {
+    
+    m_matrixColors.setActiveToggle(value);
+    //m_currentColor = value;
+    ofLogNotice() <<"GuiManager::setColor -> color: " << value;
+    
+}
+
+void GuiManager::setEffect(int value) {
+    //m_currentEffect = value;
+    m_matrixEffects.setActiveToggle(value);
+    ofLogNotice() <<"GuiManager::setEffect -> effect: " << value;
+}
