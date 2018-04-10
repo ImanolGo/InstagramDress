@@ -73,6 +73,9 @@ WifiManager::WifiManager(LedsManager* ledsManager)
     //pass = "TheFUTURE!Sno3";
     ssid = "HUAWEI-E5330-BD05";
     pass = "1501i0mn";
+
+//    ssid = "Don't worry, be happy!";
+//    pass = "whyistheskysohigh?";
     connected = false;
     localPort = 2390 ;
     sendPort = 5678;
@@ -116,41 +119,81 @@ void WifiManager::initializeWifi()
     connectWifi();
 }
 
-
 void WifiManager::connectWifi() {
      // attempt to connect to WiFi network:
    //Serial.print("Attempting to connect to SSID: ");
    //Serial.println(ssid);
    WiFi.begin(ssid.c_str(), pass.c_str());
 
-    unsigned long connect_start = millis();
-    while(WiFi.status() != WL_CONNECTED) {
+   int attempts = 0;
+  
+   while (WiFi.status() != WL_CONNECTED) {
       delay(500);
-      Serial.print(".");
-  
-      if(millis() - connect_start > WIFI_TIMEOUT) {
-        Serial.println();
-        Serial.print("Tried ");
-        Serial.print(WIFI_TIMEOUT);
-        Serial.print("ms. Resetting ESP now.");
-        ESP.reset();
+      Serial.print("WIFI STATUS ");Serial.println(WiFi.status());
+      //Serial.print(".");
+      attempts++;
+      connected = true; 
+      if(attempts>=20){
+        connected = false;
+        break;
       }
-    }
+   }
  
-   Serial.print("\nConnected to SSID: ");
-   Serial.println(ssid);
-
-   Serial.println("IP address: ");
-   Serial.println(WiFi.localIP());
+   if(connected){
+     Serial.print("\nConnected to SSID: ");
+     Serial.println(ssid);
   
-    Serial.print("\nStarting connection to UDP port ");
-    Serial.println(localPort);
-    // if you get a connection, report back via serial:
-    Udp.begin(localPort);
-    Udp.flush();
-
-    connected = true;
+     Serial.println("IP address: ");
+     Serial.println(WiFi.localIP());
+    
+      Serial.print("\nStarting connection to UDP port ");
+      Serial.println(localPort);
+      // if you get a connection, report back via serial:
+      Udp.begin(localPort);
+      Udp.flush();
+   }
+   else{
+      Serial.print("Unable to connect to ");
+      Serial.println(ssid);
+   }
+  
 }
+
+//
+//void WifiManager::connectWifi() {
+//     // attempt to connect to WiFi network:
+//   //Serial.print("Attempting to connect to SSID: ");
+//   //Serial.println(ssid);
+//   WiFi.begin(ssid.c_str(), pass.c_str());
+//
+//    unsigned long connect_start = millis();
+//    while(WiFi.status() != WL_CONNECTED) {
+//      delay(500);
+//      Serial.print(".");
+//  
+//      if(millis() - connect_start > WIFI_TIMEOUT) {
+//        Serial.println();
+//        Serial.print("Tried ");
+//        Serial.print(WIFI_TIMEOUT);
+//        Serial.print("ms. Resetting ESP now.");
+//        ESP.reset();
+//      }
+//    }
+// 
+//   Serial.print("\nConnected to SSID: ");
+//   Serial.println(ssid);
+//
+//   Serial.println("IP address: ");
+//   Serial.println(WiFi.localIP());
+//  
+//    Serial.print("\nStarting connection to UDP port ");
+//    Serial.println(localPort);
+//    // if you get a connection, report back via serial:
+//    Udp.begin(localPort);
+//    Udp.flush();
+//
+//    connected = true;
+//}
 
 
 

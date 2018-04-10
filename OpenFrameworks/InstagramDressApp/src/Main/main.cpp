@@ -5,8 +5,8 @@
 //========================================================================
 int main() {
 
-	ofSetupOpenGL(1024, 768, OF_FULLSCREEN);
-	ofRunApp(std::make_shared<EqualizerApp>());
+	ofSetupOpenGL(1024, 768, OF_WINDOW);
+	ofRunApp(std::make_shared<InstagramDressApp>());
 
 }
 

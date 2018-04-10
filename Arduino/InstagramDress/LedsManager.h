@@ -15,7 +15,7 @@
 
 //#define NUM_LEDS    40
 #define NUM_LEDS    162
-#define BRIGHTNESS  120
+#define BRIGHTNESS  90
 //#define DATA_PIN_1    12
 #define DATA_PIN_1    15
 #define DATA_PIN_2    2
@@ -85,7 +85,7 @@ class LedsManager{
 void LedsManager::setup()
 {
     this->setupLeds();
-    this->setDefault();   
+    this->setDefault();  
 }
 
 
@@ -98,8 +98,7 @@ void LedsManager::setupLeds()
     ws2812fx1->setBrightness(BRIGHTNESS);
    
     ws2812fx2->init();
-    ws2812fx2->setBrightness(BRIGHTNESS);
-   
+    ws2812fx2->setBrightness(BRIGHTNESS);   
 }
 
 void LedsManager::update()
