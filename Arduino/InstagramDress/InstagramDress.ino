@@ -34,7 +34,7 @@ WifiManager wifiManager(&ledsManager);
 void setup() 
 {
     Serial.begin(115200);
-    delay(1000);
+    delay(300);
     Serial.println("Starting Software!!!!");
 
     ledsManager.setup();
@@ -45,7 +45,5 @@ void loop()
 {
     ledsManager.update();
     wifiManager.update();
-    
-  // put a delay so it isn't overwhelming
-  //delay(10);
+ 
 }

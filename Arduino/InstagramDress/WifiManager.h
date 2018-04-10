@@ -15,7 +15,12 @@
 
 #define BUFFER_MAX 255
 #define PACKET_SIZE 4
+<<<<<<< HEAD
 #define DISCOVERY_TIMER 3000
+=======
+#define DISCOVERY_TIMER 1000
+#define WIFI_TIMEOUT 30000              // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
+>>>>>>> d6d100f51ba7410a3f6375c5680cf511e7723246
 
 class WifiManager
 {
@@ -60,6 +65,7 @@ class WifiManager
     char AUTO_DISCOVERY_COMMAND;
     char PACKET_END;
     unsigned long autodiscovery_timer;
+    unsigned long last_wifi_check_time;
 };
 
 
@@ -83,6 +89,7 @@ WifiManager::WifiManager(LedsManager* ledsManager)
     autodiscovery_timer=0;
     receivedUdpLength = 0;
     is_connected = false;
+    last_wifi_check_time = 0;
 }
 
 void WifiManager::setup()
@@ -125,9 +132,8 @@ void WifiManager::connectWifi() {
    //Serial.println(ssid);
    WiFi.begin(ssid.c_str(), pass.c_str());
 
-   int attempts = 0;
-  
-   while (WiFi.status() != WL_CONNECTED) {
+    unsigned long connect_start = millis();
+    while(WiFi.status() != WL_CONNECTED) {
       delay(500);
       Serial.print("WIFI STATUS ");Serial.println(WiFi.status());
       Serial.print("..");
@@ -245,11 +251,17 @@ void WifiManager::connectToWiFi(const char * ssid, const char * pwd){
 
 
 void WifiManager::checkWifiConnection(){
-  int status = WiFi.status();
-  if(status != WL_CONNECTED) {
-       connectWifi();
-       //printWiFiStatus();
-   }
+    unsigned long now = millis();
+   if(now - last_wifi_check_time > WIFI_TIMEOUT) {
+    Serial.print("Checking WiFi... ");
+    if(WiFi.status() != WL_CONNECTED) {
+      Serial.println("WiFi connection lost. Reconnecting...");
+      connectWifi();
+    } else {
+      Serial.println("OK");
+    }
+    last_wifi_check_time = now;
+  }
 }
 
 

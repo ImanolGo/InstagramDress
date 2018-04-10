@@ -201,18 +201,19 @@ void LedsManager::setPattern(uint8_t patternNumber )
 
 void LedsManager::setMode(uint8_t m, uint16_t s)
 {
+    ws2812fx1->setSpeed(s);  
     ws2812fx1->setMode(m);
-    ws2812fx1->setSpeed(s);
     ws2812fx1->start();
-    ws2812fx2->setMode(m);
     ws2812fx2->setSpeed(s);
+    ws2812fx2->setMode(m);
     ws2812fx2->start();
 }
 
 void LedsManager::setDefault()
 {
+
    uint8_t mode_ = FX_MODE_RUNNING_LIGHTS;
-   uint16_t speed_ = 9000;
+   uint16_t speed_ = 7000;
    this->setMode(mode_,speed_);
    this->setColor(255,255,255);
 }
@@ -222,6 +223,7 @@ void LedsManager::setRainbow()
    uint8_t mode_ = FX_MODE_RAINBOW_CYCLE;
    uint16_t speed_ = 10000;
    this->setMode(mode_,speed_);
+
 }
 void LedsManager::setFade()
 {
@@ -241,14 +243,14 @@ void LedsManager::setSparkle()
 void LedsManager::setMove()
 {
    uint8_t mode_ = FX_MODE_COLOR_WIPE;
-   uint16_t speed_ = 10000;
+   uint16_t speed_ = 1000;
    this->setMode(mode_,speed_);
 }
 
 void LedsManager::setFlash()
 {
     uint8_t mode_ = FX_MODE_STROBE;
-    uint16_t speed_ = 500;
+    uint16_t speed_ = 700;
     this->setMode(mode_,speed_);
 }
     
