@@ -15,7 +15,7 @@
 
 #define BUFFER_MAX 255
 #define PACKET_SIZE 4
-#define DISCOVERY_TIMER 1000
+#define DISCOVERY_TIMER 3000
 
 class WifiManager
 {
@@ -47,7 +47,7 @@ class WifiManager
 
     String ssid;
     String pass;
-    boolean connected;
+    boolean wifiConnected;
     boolean is_connected;
 
     WiFiUDP Udp;
@@ -67,13 +67,13 @@ WifiManager::WifiManager(LedsManager* ledsManager)
 {
     this->ledsManager=ledsManager;
     
-    //ssid = "TPH Operations";
-    //pass = "TheFUTURE!Sno3";
-//    ssid = "HUAWEI-E5330-BD05";
-//    pass = "1501i0mn";
-    ssid = "Don't worry, be happy!";
-    pass = "whyistheskysohigh?";
-    connected = false;
+    ssid = "TPH Operations";
+    pass = "TheFUTURE!Sno3";
+    //ssid = "HUAWEI-E5330-BD05";
+    //pass = "1501i0mn";
+    //ssid = "Don't worry, be happy!";
+    //pass = "whyistheskysohigh?";
+    wifiConnected = false;
     localPort = 2390 ;
     sendPort = 5678;
 
@@ -89,6 +89,7 @@ void WifiManager::setup()
 {
     Serial.println("WifiManager::setup");
     initializeWifi();
+   // connectWifi();
 }
 
 void WifiManager::initializeWifi()
@@ -117,6 +118,8 @@ void WifiManager::initializeWifi()
 
 
 void WifiManager::connectWifi() {
+
+   wifiConnected = true;
      // attempt to connect to WiFi network:
    //Serial.print("Attempting to connect to SSID: ");
    //Serial.println(ssid);
@@ -129,24 +132,40 @@ void WifiManager::connectWifi() {
       Serial.print("WIFI STATUS ");Serial.println(WiFi.status());
       Serial.print("..");
       attempts++;
+      //connected = true;
       if(attempts>=15){
+        wifiConnected =  false;
         break;
       }
    }
- 
-   Serial.print("\nConnected to SSID: ");
-   Serial.println(ssid);
 
-   Serial.println("IP address: ");
-   Serial.println(WiFi.localIP());
+   wifiConnected = true;
+   if(wifiConnected){
+         Serial.print("\nConnected to SSID: ");
+         Serial.println(ssid);
+      
+         Serial.println("IP address: ");
+         Serial.println(WiFi.localIP());
+        
+         Serial.print("\nStarting connection to UDP port ");
+         Serial.println(localPort);
+
+         // if you get a connection, report back via serial:
+         Udp.begin(localPort);
+         Udp.flush();
+    
+
+   }
+
+   else{
+        Serial.print("\nUnable to connect to: ");
+        Serial.println(ssid);
+   }
+
+    Serial.print("\nConnected:  ");
+    Serial.println(wifiConnected);
   
-    Serial.print("\nStarting connection to UDP port ");
-    Serial.println(localPort);
-    // if you get a connection, report back via serial:
-    Udp.begin(localPort);
-    Udp.flush();
-
-    connected = true;
+    //connected = true;
 }
 
 
@@ -246,11 +265,11 @@ void WifiManager::WiFiEvent(WiFiEvent_t event){
           Udp.begin(localPort);
           Serial.print("Listening to port: ");
           Serial.println(localPort); 
-          connected = true;
+          wifiConnected = true;
           break;
       case WIFI_EVENT_STAMODE_DISCONNECTED:
           Serial.println("WiFi lost connection");
-          connected = false;
+          wifiConnected = false;
           //software_Reset();
           break;
     }
@@ -278,7 +297,7 @@ bool WifiManager::isMessage(char* _buffer, int bufferSize){
 
 void WifiManager::sendAutodiscovery()
 {
-  if(is_connected || !connected) return;
+  if(is_connected || !wifiConnected) return;
   
   if( millis() - autodiscovery_timer > DISCOVERY_TIMER)
   {

@@ -13,11 +13,11 @@
 #include "LedsManager.h"
 
 
-#define NUM_LEDS    40
-//#define NUM_LEDS    162
+//#define NUM_LEDS    40
+#define NUM_LEDS    162
 #define BRIGHTNESS  84
-#define DATA_PIN_1    12
-//#define DATA_PIN_1    15
+//#define DATA_PIN_1    12
+#define DATA_PIN_1    15
 #define DATA_PIN_2    2
 
 
@@ -35,15 +35,11 @@ enum LED_COLORS{
   RED_,
   GREEN_,
   BLUE_,
-  MAGENTA_,
-  YELLOW_,
   CYAN_,
   PINK_,
   PURPLE_,
-  ORANGE_,
   WHITE_,
-  GOLD_,
-  SILVER_
+  LAVENDER_
 };
 
 
@@ -126,54 +122,37 @@ void LedsManager::setColorIndex(uint8_t i)
     currentColorNumber = i;
     switch (currentColorNumber) 
     {
-        case RED_:
-          this->setColor(255,0,0);
-          Serial.println("Set Color: Red");
-          break;
-        case GREEN_:
-          this->setColor(0,255,0);
-          Serial.println("Set Color: Green");
-          break;
-        case BLUE_:
-          this->setColor(0,0,255);
-          Serial.println("Set Color: Blue");
-          break;
-        case MAGENTA_:
-          this->setColor(255,0,255);
-          Serial.println("Set Color: Magenta");
-          break;
-        case YELLOW_:
-          this->setColor(255,255,0);
-          Serial.println("Set Color: Yellow");
-          break;
-        case CYAN_:
-          this->setColor(0,255,255);
-          Serial.println("Set Color: Cyan");
-          break;
-        case PINK_:
-          this->setColor(255, 192, 203);
-          Serial.println("Set Color: Pink");
-          break;
-        case PURPLE_:
-          this->setColor(128, 0, 128);
-          Serial.println("Set Color: Purple");
-          break;
-        case ORANGE_:
-          this->setColor(255, 165, 0);
-          Serial.println("Set Color: Orange");
-          break;
-        case WHITE_:
-          this->setColor(255,255,255);
-          Serial.println("Set Color: White");
-          break;
-        case GOLD_:
-          this->setColor(255, 215, 0);
-          Serial.println("Set Color: Gold");
-          break;
-        case SILVER_:
-          this->setColor(192, 192, 192);
-          Serial.println("Set Color: Silver");
-          break;
+       case RED_:
+         this->setColor(255,0,0);
+         Serial.println("Set Color: Red");
+         break;
+       case GREEN_:
+         this->setColor(248,255,113);
+         Serial.println("Set Color: Green");
+         break;
+       case BLUE_:
+         this->setColor(24,8,171);
+         Serial.println("Set Color: Blue");
+         break;
+       case CYAN_:
+         this->setColor(0,147,94);
+         Serial.println("Set Color: Cyan");
+         break;
+       case PINK_:
+         this->setColor(255,50,147);
+         Serial.println("Set Color: Pink");
+         break;
+       case PURPLE_:
+         this->setColor(128, 0, 128);
+         Serial.println("Set Color: Purple");
+         break;
+       case WHITE_:
+         this->setColor(255,255,184);
+         Serial.println("Set Color: White");
+         break;
+       case LAVENDER_:
+         this->setColor(251, 161, 252);
+         Serial.println("Set Color: Silver");
         default: 
           // if nothing else matches, do the default
           // default is optional
@@ -232,43 +211,44 @@ void LedsManager::setMode(uint8_t m, uint16_t s)
 
 void LedsManager::setDefault()
 {
-    uint8_t mode_ = FX_MODE_RUNNING_LIGHTS;
-    uint16_t speed_ = 2500;
-    this->setMode(mode_,speed_);
-    this->setColor(255,255,255);
+   uint8_t mode_ = FX_MODE_RUNNING_LIGHTS;
+   uint16_t speed_ = 9000;
+   this->setMode(mode_,speed_);
+   this->setColor(255,255,255);
 }
 
 void LedsManager::setRainbow()
 {
-    uint8_t mode_ = FX_MODE_RAINBOW_CYCLE;
-    uint16_t speed_ = 2500;
-    this->setMode(mode_,speed_);
+   uint8_t mode_ = FX_MODE_RAINBOW_CYCLE;
+   uint16_t speed_ = 10000;
+   this->setMode(mode_,speed_);
 }
 void LedsManager::setFade()
 {
-    uint8_t mode_ = FX_MODE_BREATH;
-    uint16_t speed_ = 1000;
-    this->setMode(mode_,speed_);
+   uint8_t mode_ = FX_MODE_FADE;
+   uint16_t speed_ = 1000;
+   this->setMode(mode_,speed_);
 }
 
 void LedsManager::setSparkle()
-{   
-    uint8_t mode_ = FX_MODE_FIREWORKS;
-    uint16_t speed_ = 500;
-    this->setMode(mode_,speed_);
+{  
+   uint8_t mode_ = FX_MODE_FIREWORKS;
+   uint16_t speed_ = 10000;
+   this->setMode(mode_,speed_);
+}
+
+
+void LedsManager::setMove()
+{
+   uint8_t mode_ = FX_MODE_COLOR_WIPE;
+   uint16_t speed_ = 10000;
+   this->setMode(mode_,speed_);
 }
 
 void LedsManager::setFlash()
 {
     uint8_t mode_ = FX_MODE_STROBE;
-    uint16_t speed_ = 200;
-    this->setMode(mode_,speed_);
-}
-
-void LedsManager::setMove()
-{
-    uint8_t mode_ = FX_MODE_COMET;
-    uint16_t speed_ = 1500;
+    uint16_t speed_ = 500;
     this->setMode(mode_,speed_);
 }
     

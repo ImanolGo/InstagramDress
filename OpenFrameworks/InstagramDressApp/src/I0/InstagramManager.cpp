@@ -45,9 +45,9 @@ void InstagramManager::setupTags()
     //m_triggerTags.push_back("dorobaer");
     m_triggerTags.push_back("elektrocouture");
     //m_triggerTags.push_back("colors");
-    m_colorTags = {"red", "green", "blue", "magenta", "yellow", "cyan", "pink", "purple", "orange", "white", "gold", "silver"};
+    m_colorTags = {"red", "green", "blue", "cyan", "pink", "purple", "white", "lavender"};
     m_effectTags = {"default", "fade", "sparkle", "flash", "move", "rainbow"};
-    m_colors = {ofColor::red, ofColor::green, ofColor::blue, ofColor::magenta, ofColor::yellow, ofColor::cyan, ofColor::pink,  ofColor::purple,  ofColor::orange,  ofColor::white,  ofColor::gold,  ofColor::silver};
+    m_colors = {ofColor::red, ofColor::green, ofColor::blue, ofColor::cyan, ofColor::pink,  ofColor::white,  ofColor::lavender};
     
 }
 
@@ -113,10 +113,10 @@ bool InstagramManager::checkUpdate(const string& result, const string& tag)
         ofLogNotice() <<"InstagramManager::parseJson -> " << tag << ": "<< m_currentCode;
         ofLogNotice() <<"InstagramManager::result -> " << hashtagString;
         string resultTag;
-        if(this->checkColorTags(hashtagString)){
+        if(this->checkEffectTags(hashtagString)){
             m_currentString = hashtagString;
             //m_currentEffectIndex = (int) ofRandom(1,6);
-            this->checkEffectTags(hashtagString);
+            this->checkColorTags(hashtagString);
             return true;
         }
         
